@@ -86,6 +86,8 @@ export default function CustomerLogin() {
   const renderError = (message) => <p className="help is-danger">{message}</p>;
 
   return (
+    <>
+  
     <div style={{ marginLeft: "40%" }}>
       <Formik
         initialValues={initialValues}
@@ -282,9 +284,13 @@ export default function CustomerLogin() {
       </Formik>
 
     
-      <button onClick={() => navigate('/')}>
+    </div>
+
+    
+    <button onClick={() => navigate('/')}>
         Logout
       </button>
-    </div>
+      
+    </>
   );
 }
