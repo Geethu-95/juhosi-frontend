@@ -33,8 +33,17 @@ export default function LoginForm() {
   const [uname, setUname] = useState("");
   const [pwd, setPwd] = useState("");
 
+  const requestOptions = {
+    method: "GET",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    }
+  };
+
   const authenticationMech = (values) => {
-    fetch(`https://dynamic-sundae-608ccc.netlify.app/.netlify/functions/index/login/${values.id}`)
+    fetch(`https://dynamic-sundae-608ccc.netlify.app/.netlify/functions/index/login/${values.id}`,requestOptions)
       .then((response) => response.json())
       .then((data) => {
         // setUname(data[0].customerId);
