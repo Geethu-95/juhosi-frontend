@@ -2,8 +2,12 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 export default function CustomerLogin() {
+
+  const {navigate} = useNavigate();
+
   const initialValues = {
     orderDate: new Date(),
     company: "",
@@ -276,6 +280,11 @@ export default function CustomerLogin() {
           );
         }}
       </Formik>
+
+    
+      <button onClick={navigate('/')}>
+        Logout
+      </button>
     </div>
   );
 }

@@ -1,9 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function AdminLogin() {
   const [dataTable, setdatatable] = useState();
+const {navigate} = useNavigate();
 
   const getData = () => {
     fetch(`https://dynamic-sundae-608ccc.netlify.app/.netlify/functions/index/admin`)
@@ -50,6 +52,10 @@ export default function AdminLogin() {
           <td>{dataTable && dataTable.boxC1 + dataTable.boxC2}</td>
         </tr>
       </table>
+
+      <button onClick={navigate('/')}>
+        Logout
+      </button>
     </>
   );
 }
