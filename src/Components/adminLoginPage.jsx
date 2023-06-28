@@ -31,6 +31,13 @@ export default function AdminLogin() {
   }
   return (
     <>
+     <div class="topnav" style={{ backgroundColor: 'pink', color: 'black', height: '60px', fontSize: '20px' }}>
+        <a class="active" href="/home"><b>Logout</b></a>
+
+      </div>
+
+      <br></br>
+      
       <table align="center" style={{ border: "1px solid black" }}>
         <tr>
           <th>Item/Customer</th>
@@ -60,9 +67,9 @@ export default function AdminLogin() {
         </tr>
       </table>
 
-      <button onClick={routeChange}>
+      {/* <button onClick={routeChange}>
         Logout
-      </button>
+      </button> */}
     </>
   );
 }

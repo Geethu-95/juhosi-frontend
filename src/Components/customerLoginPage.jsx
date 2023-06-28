@@ -91,7 +91,12 @@ export default function CustomerLogin() {
 
   return (
     <>
-  
+   <div class="topnav" style={{ backgroundColor: 'pink', color: 'black', height: '60px', fontSize: '20px' }}>
+        <a class="active" href="/home"><b>Logout</b></a>
+
+      </div>
+
+      <br></br>
     <div style={{ marginLeft: "40%" }}>
       <Formik
         initialValues={initialValues}
@@ -291,9 +296,9 @@ export default function CustomerLogin() {
     </div>
 
     
-    <button onClick={routeChange}>
+    {/* <button onClick={routeChange}>
         Logout
-      </button>
+      </button> */}
 
     </>
   );
