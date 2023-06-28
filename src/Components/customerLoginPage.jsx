@@ -40,7 +40,7 @@ export default function CustomerLogin() {
     checklistQuant: Yup.string().required("Please enter value"),
   });
 
-  const submitForm = (values) => {
+  const submitForm = async (values) => {
     // console.log(values);
 
     var postValues = {
@@ -75,7 +75,7 @@ export default function CustomerLogin() {
       body: formBody,
     };
 
-    fetch("https://dynamic-sundae-608ccc.netlify.app/.netlify/functions/index/storeData", requestOptions).then(
+    await fetch("https://dynamic-sundae-608ccc.netlify.app/.netlify/functions/index/storeData", requestOptions).then(
       (response) => {
         console.log(response);
         alert("Successfully submitted data!");
@@ -282,7 +282,7 @@ export default function CustomerLogin() {
       </Formik>
 
     
-      <button onClick={navigate('/')}>
+      <button onClick={() => navigate('/')}>
         Logout
       </button>
     </div>

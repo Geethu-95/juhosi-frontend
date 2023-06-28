@@ -7,18 +7,8 @@ export default function AdminLogin() {
   const [dataTable, setdatatable] = useState();
 const {navigate} = useNavigate();
 
-const requestOptions = {
-  method: "GET",
-  mode: "no-cors",
-  headers: {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-  }
-};
-
-
-  const getData = () => {
-    fetch(`https://dynamic-sundae-608ccc.netlify.app/.netlify/functions/index/admin`,requestOptions)
+  const getData = async () => {
+    await fetch(`https://dynamic-sundae-608ccc.netlify.app/.netlify/functions/index/admin`)
       .then((response) => response.json())
       .then((data) => {
         setdatatable(data);
@@ -63,7 +53,7 @@ const requestOptions = {
         </tr>
       </table>
 
-      <button onClick={navigate('/')}>
+      <button onClick={() => navigate('/')}>
         Logout
       </button>
     </>
