@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 
 export default function AdminLogin() {
   const [dataTable, setdatatable] = useState();
-const {navigate} = useNavigate();
+
 
   const getData = async () => {
     await fetch(`https://dynamic-sundae-608ccc.netlify.app/.netlify/functions/index/admin`)
@@ -22,6 +22,13 @@ const {navigate} = useNavigate();
     getData();
   }, []);
 
+
+  let {navigate} = useNavigate();
+  
+  const routeChange = () =>{ 
+    let path = `/home`; 
+    navigate(path);
+  }
   return (
     <>
       <table align="center" style={{ border: "1px solid black" }}>
@@ -53,7 +60,7 @@ const {navigate} = useNavigate();
         </tr>
       </table>
 
-      <button onClick={() => navigate('/home')}>
+      <button onClick={routeChange}>
         Logout
       </button>
     </>

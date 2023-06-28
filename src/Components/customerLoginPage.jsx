@@ -6,7 +6,11 @@ import { useNavigate } from "react-router";
 
 export default function CustomerLogin() {
 
-  const {navigate} = useNavigate();
+  let {navigate} = useNavigate();
+  const routeChange = () =>{ 
+    let path = `/home`; 
+    navigate(path);
+  }
 
   const initialValues = {
     orderDate: new Date(),
@@ -287,7 +291,7 @@ export default function CustomerLogin() {
     </div>
 
     
-    <button onClick={() => navigate('/home')}>
+    <button onClick={routeChange}>
         Logout
       </button>
 
