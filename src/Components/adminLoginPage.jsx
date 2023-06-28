@@ -53,7 +53,7 @@ const {navigate} = useNavigate();
         </tr>
       </table>
 
-      <button onClick={() => navigate('/')}>
+      <button onClick={() => navigate('/home')}>
         Logout
       </button>
     </>

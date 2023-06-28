@@ -287,10 +287,10 @@ export default function CustomerLogin() {
     </div>
 
     
-    <button onClick={() => navigate('/')}>
+    <button onClick={() => navigate('/home')}>
         Logout
       </button>
-      
+
     </>
   );
 }
